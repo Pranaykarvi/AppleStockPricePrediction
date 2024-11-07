@@ -65,7 +65,7 @@ page = st.sidebar.selectbox("Go to", ["Dashboard", "About Us/Project Details", "
 if page == "Dashboard":
     st.title("Stock Market Prediction")
      # Use raw string for the file path or ensure backslashes are doubled
-    image_path = r"D:\target\ml\Stock_MARKET_PREDICTION\Leonardo_Phoenix_A_sleek_and_modern_digital_illustration_of_a_2.jpg"
+    image_path = "Stock_MARKET_PREDICTION/Leonardo_Phoenix_A_sleek_and_modern_digital_illustration_of_a_2.jpg"
     
     # Display the image with a caption
     st.image(image_path, use_column_width=True)
