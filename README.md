@@ -1,59 +1,56 @@
 # Apple Stock Price Prediction  
 ## LSTM and RNN Ensemble for Time Series Forecasting
 
-This project demonstrates the use of advanced deep learning architectures, specifically LSTM (Long Short-Term Memory) and GRU (Gated Recurrent Unit) layers, to forecast Apple stock prices. By implementing an ensemble of these models, the project achieves higher prediction accuracy. The notebook utilizes Keras and KerasTuner for hyperparameter tuning and model selection, making it flexible and adaptable for various time series forecasting tasks.
+[![Stock Prediction Project](Stock_MARKET_PREDICTION/Screenshot 2024-11-07 182051.png)](https://apple-stock-prediction-pranaykarvi.streamlit.app/)
+
+This project demonstrates the use of advanced deep learning architectures, specifically LSTM (Long Short-Term Memory) and GRU (Gated Recurrent Unit) layers, to forecast Apple stock prices. While primarily focused on Apple stock, the model is flexible enough to handle datasets with similar fields (like open, close, high, low prices).
 
 ### Key Features
-- **Data Preparation and Preprocessing**:  
-  - The project starts by loading and scaling the data using `MinMaxScaler` for optimal model performance. 
-  - A sliding window approach creates input sequences, where each sequence represents a specific time period of stock prices. This method effectively captures temporal dependencies.
-  
-- **EnhancedModel Class for Flexible Architectures**:  
-  - The `EnhancedModel` class enables a variety of RNN architectures, including LSTM, GRU, and Bidirectional LSTM layers.  
-  - It allows for customizable parameters such as the number of units, dropout rates, and layer types, making the model easily adaptable for other datasets or forecasting tasks.
+- **Data Preparation and Preprocessing**  
+  - Data is scaled using `MinMaxScaler` for optimal performance. A sliding window approach is used to capture temporal dependencies effectively by creating input sequences.
 
-- **Hyperparameter Tuning with KerasTuner**:  
-  - KerasTuner’s `RandomSearch` automatically finds the best hyperparameter configuration based on validation loss, optimizing model performance.
-  - Key tunable parameters include the number of LSTM/GRU units, dropout rates, learning rates, and the choice of RNN type.
+- **Flexible Model Architecture with `EnhancedModel`**  
+  - The `EnhancedModel` class supports multiple RNN architectures like LSTM, GRU, and Bidirectional LSTM. It allows custom configurations such as units, dropout rates, and layer types.
 
-- **Ensemble Approach**:  
-  - An ensemble of multiple models is trained to improve predictive accuracy. Averaging the predictions of various architectures minimizes variance, leading to more stable and accurate forecasts.  
-  - This approach outperforms individual models by leveraging the strengths of each model type.
+- **Hyperparameter Tuning with KerasTuner**  
+  - KerasTuner’s `RandomSearch` finds the best hyperparameter configuration based on validation loss, optimizing parameters like LSTM/GRU units, dropout rates, learning rates, and RNN type.
 
-- **Comprehensive Performance Evaluation**:  
-  - The final model’s performance is evaluated with Root Mean Squared Error (RMSE), Mean Absolute Error (MAE), and R² metrics, which provide a detailed analysis of accuracy.
-  - Comparison between individual and ensemble model results demonstrates the ensemble’s effectiveness.
+- **Ensemble Learning Approach**  
+  - Multiple models are averaged to improve prediction accuracy, leveraging the strengths of each architecture to reduce variance and yield stable predictions.
 
-- **Visualization**:  
-  - Plots of actual vs. predicted stock prices are generated to visualize the model’s performance.
-  - Additional visualizations, such as residual and error distribution plots, provide insights into prediction accuracy and potential areas for improvement.
+- **Comprehensive Performance Evaluation**  
+  - Model performance is evaluated with RMSE, MAE, and R² metrics. Comparative results between individual models and the ensemble show improved prediction accuracy for stock forecasting.
+
+- **Visualizations**  
+  - Actual vs. predicted stock prices are visualized to demonstrate model performance. Additional visualizations, like residual and error distribution plots, highlight accuracy and model improvements.
 
 ### Performance Metrics
 - **Ensemble Model RMSE**: 0.0123
 - **Ensemble Model MAE**: 0.0101
 - **Ensemble Model R²**: 0.972
 
-These metrics underscore the ensemble’s effectiveness in achieving high prediction accuracy for stock price forecasting.
+These metrics demonstrate the ensemble model's effectiveness in achieving high prediction accuracy for stock forecasting.
 
 ### Usage Instructions
-1. **Data Preparation**: Ensure `X_train`, `X_val`, `y_train`, and `y_val` are defined with an appropriate time-series split.
-2. **Model Configuration and Training**:  
-   - Use the `EnhancedModel` class to experiment with different model architectures.
-   - Run KerasTuner to identify the best hyperparameters.
-3. **Evaluation and Visualization**:  
-   - After training, evaluate the model using RMSE, MAE, and R² metrics.  
-   - Plot actual vs. predicted values to validate forecasting accuracy.
+1. **Data Preparation**: Ensure columns match the format used for training (like Apple's historical data).
+2. **Model Configuration and Training**  
+   - Use the `EnhancedModel` class to experiment with architectures and run KerasTuner to find optimal hyperparameters.
+3. **Evaluation and Visualization**  
+   - Evaluate the model using RMSE, MAE, and R² metrics, and plot actual vs. predicted values for validation.
 
 ### Dependencies
-- Keras
-- KerasTuner
-- Scikit-Learn
-- Matplotlib
+- `tensorflow`
+- `keras-tuner`
+- `scikit-learn`
+- `matplotlib`
+- `streamlit`
 
 ### License
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
 
 ---
 
-This project serves as a foundational template for time series forecasting using deep learning models. It is especially useful for those interested in experimenting with ensemble approaches in predictive modeling.
+This project is a robust foundation for time series forecasting with deep learning, especially useful for those exploring ensemble methods in predictive modeling.
+
+
 
