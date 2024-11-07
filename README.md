@@ -1,7 +1,8 @@
 # Apple Stock Price Prediction  
 ## LSTM and RNN Ensemble for Time Series Forecasting
 
-[![Stock Prediction Project](Stock_MARKET_PREDICTION/Screenshot 2024-11-07 182051.png](https://apple-stock-prediction-pranaykarvi.streamlit.app/)
+[![Stock Prediction Project](https://github.com/Pranaykarvi/StockMarketPrediction/blob/main/Stock_MARKET_PREDICTION/Screenshot%202024-11-07%20182051.png)](https://apple-stock-prediction-pranaykarvi.streamlit.app/)
+**Click on the above image to view the webapp**
 
 This project demonstrates the use of advanced deep learning architectures, specifically LSTM (Long Short-Term Memory) and GRU (Gated Recurrent Unit) layers, to forecast Apple stock prices. While primarily focused on Apple stock, the model is flexible enough to handle datasets with similar fields (like open, close, high, low prices).
 
