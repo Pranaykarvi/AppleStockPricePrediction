@@ -8,7 +8,7 @@ import matplotlib.pyplot as plt
 # Load the pre-trained model
 @st.cache_resource
 def load_model():
-    model = tf.keras.models.load_model("Stock_MARKET_PREDICTION/best_ensemble_model.h5")
+    model = tf.keras.models.load_model(r"D:\target\ml\Stock_MARKET_PREDICTION\best_ensemble_model.h5")
     return model
 
 # Load and preprocess the dataset
@@ -63,38 +63,50 @@ page = st.sidebar.selectbox("Go to", ["Dashboard", "About Us/Project Details", "
 # Page 1: Dashboard
 # Page 1: Dashboard
 if page == "Dashboard":
-    st.title("Stock Market Prediction")
-     # Use raw string for the file path or ensure backslashes are doubled
-    image_path = "Stock_MARKET_PREDICTION/Leonardo_Phoenix_A_sleek_and_modern_digital_illustration_of_a_2.jpg"
-    
+    st.title("Apple Stock Market Prediction")
+      # Use raw string for the file path or ensure backslashes are doubled
+    image_path = r"D:\target\ml\Stock_MARKET_PREDICTION\Leonardo_Phoenix_A_sleek_and_modern_digital_illustration_of_a_2.jpg"
     # Display the image with a caption
     st.image(image_path, use_column_width=True)
-   
-    
+
     st.write("""
-    ### Stock Price Prediction using LSTM and RNN Ensemble
-    This project showcases the use of advanced deep learning architectures, specifically LSTM (Long Short-Term Memory) and GRU (Gated Recurrent Unit) layers, to forecast stock prices. While the model was initially trained on Apple stock data, you can upload your own dataset under the **Prediction** tab to generate personalized forecasts for any stock of your choice.
+### Stock Price Prediction using LSTM and GRU Ensemble
 
-    Key Features:
-    - **Data Preparation and Preprocessing**: The project utilizes a sliding window approach to create input sequences, effectively capturing temporal dependencies in stock prices.
-    - **Flexible Model Architecture**: The `EnhancedModel` class allows for various RNN architectures, including LSTM, GRU, and Bidirectional LSTM layers, and customizable parameters.
-    - **Hyperparameter Tuning**: KerasTuner’s RandomSearch automatically finds the best configuration to optimize model performance.
-    - **Ensemble Approach**: Multiple models are trained and combined, leveraging the strengths of each model to improve accuracy and stability.
-    - **Comprehensive Performance Evaluation**: The model’s performance is assessed using metrics such as RMSE, MAE, and R², ensuring a detailed accuracy analysis.
-    - **Visualization**: Plots of actual vs. predicted prices, residual plots, and error distribution provide insights into model performance.
+This project demonstrates the use of advanced deep learning architectures, specifically LSTM (Long Short-Term Memory) and GRU (Gated Recurrent Unit) layers, to forecast Apple stock prices. While primarily focused on Apple stock, the model is flexible enough to handle datasets with similar fields (like open, close, high, and low prices).
+""")
 
-    ### Performance Metrics
-    - **Ensemble Model RMSE**: 0.0123
-    - **Ensemble Model MAE**: 0.0101
-    - **Ensemble Model R²**: 0.972
+    st.subheader("Key Features")
 
-    These metrics highlight the ensemble model’s effectiveness in achieving high prediction accuracy for stock price forecasting.
-    """)
-    st.write("###### Navigate to **About Us** to learn more about the project or **Prediction** to start forecasting with your own data.")
+    st.markdown("""
+- **Data Preparation and Preprocessing**  
+    - The data is scaled using MinMaxScaler for optimal model performance. A sliding window approach effectively captures temporal dependencies by creating input sequences.
 
+- **Flexible Model Architecture with EnhancedModel**  
+    - The EnhancedModel class supports multiple RNN architectures like LSTM, GRU, and Bidirectional LSTM. It enables custom configurations, such as units, dropout rates, and layer types, to suit various forecasting needs.
 
+- **Hyperparameter Tuning with KerasTuner**  
+    - KerasTuner’s RandomSearch optimizes the best hyperparameter configuration based on validation loss. Parameters like LSTM/GRU units, dropout rates, learning rates, and RNN type are tuned to improve model accuracy.
 
-# Page 2: About Us/Project Details
+- **Ensemble Learning Approach**  
+    - Multiple models are averaged to improve prediction accuracy, leveraging each architecture's strengths to reduce variance and yield stable predictions.
+
+- **Comprehensive Performance Evaluation**  
+    - Model performance is evaluated using RMSE, MAE, and R² metrics. Comparative results between individual models and the ensemble highlight the improvements in prediction accuracy for stock forecasting.
+
+- **Visualizations**  
+    - Visualizations such as actual vs. predicted stock prices help demonstrate model performance. Additional plots, including residual and error distribution plots, further highlight accuracy and improvements.
+""")
+
+    st.subheader("Performance Metrics")
+
+    st.write("""
+- **Ensemble Model RMSE**: 0.0123  
+- **Ensemble Model MAE**: 0.0101  
+- **Ensemble Model R²**: 0.972  
+""")
+
+    st.write("These metrics demonstrate the ensemble model's effectiveness in achieving high prediction accuracy for stock forecasting.")
+
 elif page == "About Us/Project Details":
     st.title("About the Project")
 
@@ -117,7 +129,6 @@ elif page == "About Us/Project Details":
 
     This project demonstrates how combining advanced deep learning architectures and ensemble methods can address some of the common challenges in time series forecasting and improve prediction accuracy. The use of historical stock data as a training base enables users to make data-driven decisions and potentially gain valuable insights from market trends.
     """)
-
 # Page 3: Prediction
 elif page == "Prediction":
     st.title("Predict Future Stock Prices")
