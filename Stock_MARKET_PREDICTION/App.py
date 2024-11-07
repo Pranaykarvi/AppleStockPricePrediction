@@ -8,7 +8,7 @@ import matplotlib.pyplot as plt
 # Load the pre-trained model
 @st.cache_resource
 def load_model():
-    model = tf.keras.models.load_model(r"D:\target\ml\Stock_MARKET_PREDICTION\best_ensemble_model.h5")
+    model = tf.keras.models.load_model("Stock_MARKET_PREDICTION/Leonardo_Phoenix_A_sleek_and_modern_digital_illustration_of_a_2.jpg")
     return model
 
 # Load and preprocess the dataset
