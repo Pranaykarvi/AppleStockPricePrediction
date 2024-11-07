@@ -90,7 +90,7 @@ if page == "Dashboard":
 
     These metrics highlight the ensemble model’s effectiveness in achieving high prediction accuracy for stock price forecasting.
     """)
-    st.write("#### Navigate to **About Us** to learn more about the project or **Prediction** to start forecasting with your own data.")
+    st.write("###### Navigate to **About Us** to learn more about the project or **Prediction** to start forecasting with your own data.")
 
 
 
