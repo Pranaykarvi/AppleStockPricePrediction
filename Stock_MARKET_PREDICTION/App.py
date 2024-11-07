@@ -8,7 +8,7 @@ import matplotlib.pyplot as plt
 # Load the pre-trained model
 @st.cache_resource
 def load_model():
-    model = tf.keras.models.load_model("Stock_MARKET_PREDICTION/Leonardo_Phoenix_A_sleek_and_modern_digital_illustration_of_a_2.jpg")
+    model = tf.keras.models.load_model("Stock_MARKET_PREDICTION/best_ensemble_model.h5")
     return model
 
 # Load and preprocess the dataset
@@ -65,7 +65,7 @@ page = st.sidebar.selectbox("Go to", ["Dashboard", "About Us/Project Details", "
 if page == "Dashboard":
     st.title("Apple Stock Market Prediction")
       # Use raw string for the file path or ensure backslashes are doubled
-    image_path = "Stock_MARKET_PREDICTION/Screenshot 2024-11-07 182051.png"
+    image_path = "Stock_MARKET_PREDICTION/Leonardo_Phoenix_A_sleek_and_modern_digital_illustration_of_a_2.jpg"
     # Display the image with a caption
     st.image(image_path, use_column_width=True)
 
