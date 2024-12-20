@@ -51,7 +51,7 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 ---
 
-This project is a robust foundation for time series forecasting with deep learning, especially useful for those exploring ensemble methods in predictive modeling.
+This project is a robust foundation for time series forecasting with deep learning concepts, especially useful for those exploring ensemble methods in predictive modeling.
 
 
 
